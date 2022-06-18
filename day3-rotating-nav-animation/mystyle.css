@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* 给container添加属性 */
+.container{
+  background-color: #fafafa;
+  padding: 50px;
+  width: 100vw;
+  transform-origin: left top;
+  transition: transform 0.4s ease;
+}
+.container.showNav{
+  transform: rotate(-20deg);
+}
+
+/* 中间文本的属性 */
+.content{
+  margin-top: 50px;
+}
+.content img{
+  max-width: 100%;
+}
+.content p{
+  color: gray;
+  line-height: 25px;
+}
+.content h3{
+  margin-top: 80px;
+}
+
+/* 给圆添加属性 */
+.circle-container{
+  height: 200px;
+  width: 200px;
+  position: fixed;
+  left: -100px; 
+  top: -100px; 
+}
+.circle-container .circle{
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.4s linear;
+}
+.circle-container .circle button{
+  cursor: pointer;
+  background: transparent;
+  font-size: 26px;
+  height: 100px;
+  border: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: #fafafa;
+}
+.circle button#open{
+  left: 60%;
+}
+.circle button#close{
+  top: 30%;
+  left: 55%;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+}
+.container.showNav .circle{
+  transform: rotate(-60deg);
+}
+
+/* 给nav添加属性 */
+.container.showNav + nav li{
+  transform: translateX(0);
+  transition-delay: 0.4s;
+}
+nav{
+  position: fixed;
+  bottom: 40px;
+  z-index: 9999;
+}
+nav ul {
+  list-style: none;
+}
+nav ul li{
+  margin-top: 20px;
+  color: antiquewhite;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+nav ul li:nth-of-type(2){
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+nav ul li:nth-of-type(3){
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+nav ul li i{
+  font-size: 23px;
+}
+nav ul li a{
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+}

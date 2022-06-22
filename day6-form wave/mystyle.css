@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: steelblue;
+  color: #fff;
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container{
+  background-color: #2a4e6c;
+  border-radius: 5px;
+  padding: 20px 40px;
+}
+.container h1{
+  text-align: center;
+  margin-bottom: 40px;
+}
+.container input{
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  font-size: 18px;
+  padding: 15px 0;
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid white;
+}
+.form-control{
+  position: relative;
+  margin: 20px 0 40px;
+  width: 330px;
+}
+.form-control label{
+  position: absolute;
+  top: 15px;
+  left: 0;
+  /* 让该属性摸不到 */
+  pointer-events: none;
+}
+.btn{
+  background-color: #add8e6;
+  border: none;
+  height: 50px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+  font-family: inherit;
+  margin-bottom: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: #add8e6;
+}
+
+.form-control label span {
+  display:inline-block; 
+  font-size: 18px; 
+   min-width: 5px;
+   /* 贝塞尔曲线 */
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span
+{
+  color: lightblue;
+  transform: translateY(-30px);
+}
+/* .form-control input:valid + label span  */
